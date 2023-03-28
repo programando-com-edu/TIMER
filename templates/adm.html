@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="row vh-100 d-flex align-items-center">
+    <div class="col-12 col-md-3 mx-auto">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-between align-items-center">
+                <button type="button" onclick="iniciar()" class="btn btn-success btn-circle">Inciar</button>
+                <button type="button" onclick="pausar()" class="btn btn-warning btn-circle">Pausar</button>
+                <button type="button" onclick="iniciar()" class="btn btn-info btn-circle" >Continuar</button>
+                <button type="button" onclick="reiniciar()" class="btn btn-danger btn-circle" >Reniciar</button>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-12 d-flex justify-content-between align-items-center">
+                <button type="button" onclick="add(-30)" class="btn btn-primary btn-circle" >+1 min</button>
+                <button type="button" onclick="add(2)" class="btn btn-primary btn-circle" >+2 min</button>
+                <button type="button" onclick="add(3)" class="btn btn-primary btn-circle" >+3 min</button>
+                <button type="button" onclick="add(4)" class="btn btn-primary btn-circle" >+4 min</button>
+                <button type="button" onclick="add(5)" class="btn btn-primary btn-circle" >+5 min</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1 id="counter">00:00</h1>
+
+{% endblock %}

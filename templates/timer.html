@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+    {% block scripts%}
+        <script>
+            var pusher = new Pusher('1ca09765c860dea6d83d', {
+                cluster: 'sa1'
+            });
+            var channel = pusher.subscribe('private-timer-123');
+
+            channel.bind('my-event', function(data) {
+
+                document.getElementById("counter").innerHTML = + data.message;
+            });
+        </script>
+    {% endblock %}
+ 
+    {%block body %}
+        <div class="relogio">
+            <div class="font-azure">
+                <h1 id="counter"></h1>
+            </div>
+        </div>
+    {% endblock %}
