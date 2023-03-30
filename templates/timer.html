@@ -9,7 +9,7 @@
 
             channel.bind('my-event', function(data) {
 
-                document.getElementById("counter").innerHTML = + data.message;
+                document.getElementById("counter").innerHTML = data.message;
             });
         </script>
     {% endblock %}

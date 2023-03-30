@@ -11,10 +11,6 @@ function format() {
     var format_timer = (hr < 10 ? '0' + hr : hr) + ':' + (min < 10 ? '0' + min : min) + ':' + (sec < 10 ? '0' + sec : sec);
   }
 
-  channel.trigger('client-my-event', {
-    "message": format_timer
-  });
-  console.log(format_timer);
   return format_timer;
 }
 
@@ -68,13 +64,3 @@ function timer() {
   }
   format();
 }
-
-var pusher = new Pusher('1ca09765c860dea6d83d', {
-  cluster: 'sa1',
-  encrypted: true
-});
-
-var channel = pusher.subscribe('private-timer-123');
-channel.bind('my-event', function (data) {
-  alert(data.message);
-});
